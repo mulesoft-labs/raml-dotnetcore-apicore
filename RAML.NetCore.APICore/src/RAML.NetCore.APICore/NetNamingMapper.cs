@@ -44,8 +44,9 @@ namespace Raml.Common
             name = ReplaceSpecialChars(name, "`");
 			name = ReplaceSpecialChars(name, "{");
 			name = ReplaceSpecialChars(name, "}");
+            name = ReplaceSpecialChars(name, "-");
 
-			name = RemoveIndalidChars(name);
+            name = RemoveIndalidChars(name);
 
 			if (ReservedWords.Contains(name))
 				name += "Object";
@@ -88,7 +89,8 @@ namespace Raml.Common
             validnamespace = validnamespace.Replace("(", string.Empty);
             validnamespace = validnamespace.Replace(")", string.Empty);
             validnamespace = validnamespace.Replace("|", string.Empty);
-			return validnamespace;
+            validnamespace = ReplaceSpecialChars(validnamespace, "-");
+            return validnamespace;
 		}
 
 		public static bool HasIndalidChars(string input)
