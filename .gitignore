@@ -176,6 +176,3 @@ FakesAssemblies/
 
 # Visual Studio Code Settings
 .vs/
-
-# Visual Studio 2015
-*.lock.json
